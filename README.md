@@ -1,4 +1,4 @@
-# [Név]
+# Pivarcsi Gergely Máté
 
 ## Hogyan kezdj neki?
 
