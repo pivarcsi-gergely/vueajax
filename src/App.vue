@@ -103,7 +103,7 @@ export default {
      this.resetForm()
     },
 
-    async savestatue() {
+    async saveStatue() {
       this.saving='disabled'
      await fetch(`http://127.0.0.1:8000/api/statues/${this.statue.id}`, {
        method: 'PATCH',
