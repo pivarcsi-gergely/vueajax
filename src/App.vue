@@ -6,9 +6,9 @@
       <thead>
         <tr>
           <th>Azonsító</th>
-          <th>Cím</th>
-          <th>Év</th>
-          <th>Kiállítva(piros lap)</th>
+          <th>Személy</th>
+          <th>Magasság</th>
+          <th>Érték</th>
           <th>Műveletek</th>
         </tr>
       </thead>
@@ -139,7 +139,7 @@ export default {
       this.mod_new = true
     }
   },
-  
+
   mounted() {
     this.loadData()
   }
