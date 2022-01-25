@@ -1,8 +1,17 @@
 <template>
-        <tbody>
-        <tr v-for="statue in statues" v-bind:key="statue.id">
+<table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Person</th>
+          <th>Height</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="statue in statueList" v-bind:key="statue.id">
           <td>{{ statue.id }}</td>
-          <td>{{ statue.person }}</td>
+          <td><router-link :to="{name: 'statue', params:{ id: statue.id }}">{{ statue.person }}</router-link></td>
           <td>{{ statue.height }}</td>
           <td>{{ statue.price }}</td>
           <td>
@@ -30,14 +39,14 @@
             <button v-if="!mod_new" @click="cancelEdit" :disabled="saving">Mégse</button>
           </td>
         </tr>
-        
       </tbody>
+    </table>
 </template>
 
 <script>
 
 export default {
-  name: "StatueItem",
+  name: "Statues",
   data() {
     return {
       mod_new: true, 
@@ -48,7 +57,7 @@ export default {
         height: null,
         price: null
       },
-      statues:[]
+      statueList:[]
     }
   },
   methods: {
@@ -56,7 +65,7 @@ export default {
     async loadData () {
      let Response = await fetch('http://127.0.0.1:8000/api/statues')
      let data = await Response.json()
-     this.statues = data
+     this.statueList = data
     },
     
     async deleteStatue(id) {

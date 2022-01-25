@@ -1,16 +1,11 @@
 <template>
   <div id="app">
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Person</th>
-          <th>Height</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <router-view></router-view>
-    </table>
+    <nav>
+      <router-link to="/">Statue-list</router-link>
+      <router-link to="/info">Info</router-link>
+    </nav>
+    <div id="vonal"></div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -38,4 +33,19 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+nav a {
+  background-color: grey;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+nav {
+  margin-bottom: 12px;
+}
+#vonal {
+  background-color: rgb(99, 99, 99);
+  height: 0.01em;
+  width: 100%;
+  margin-bottom: 1em;
+  }
 </style>
